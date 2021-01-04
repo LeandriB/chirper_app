@@ -15,8 +15,10 @@ class NewTweet extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
 
-        // todo: Add tweet to the store
-        console.log('New Tweet: ', text)
+        const { text } = this.state
+        const { dispatch, id } = this.props
+
+        dispatch(handleAddTweet(text, id))
 
         this.setState(() => ({
             text: ''
@@ -24,9 +26,8 @@ class NewTweet extends Component {
     }
     render() {
         const { text } = this.state
-        const { dispatch } = this.props
 
-        dispatch(handleAddTweet(text, id))
+         {/* todo: Redirect to / if submitted */}
         
         const tweetLeft = 280 - text.length
 
