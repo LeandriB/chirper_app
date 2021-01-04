@@ -45,9 +45,9 @@ class Tweet extends Component {
                         <span>{name}</span>
                         <div>{formatDate(timestamp)}</div>
                         {parent && (
-                        <button className='replying-to' onClick={(e) => this.toParent(e, parent.id)}>
-                            Replying to @{parent.author}
-                        </button>
+                            <button className='replying-to' onClick={(e) => this.toParent(e, parent.id)}>
+                                Replying to @{parent.author}
+                            </button>
                         )}
                         <p>{text}</p>
                     </div>
